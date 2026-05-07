@@ -1,13 +1,29 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb  6 21:10:46 2019
-
-@author: rdamseh
+Lazy geometric graph exports.
 """
 
-from VascGraph.GeomGraph.Graph import Graph 
-from VascGraph.GeomGraph.GraphObject import GraphObject
-from VascGraph.GeomGraph.DiGraph import DiGraph
-from VascGraph.GeomGraph.GenerateDiGraph import GenerateDiGraph
-from VascGraph.GeomGraph.AnnotateDiGraph import AnnotateDiGraph
+import importlib
+
+
+_EXPORTS = {
+    'Graph': ('VascGraph.GeomGraph.Graph', 'Graph'),
+    'GraphObject': ('VascGraph.GeomGraph.GraphObject', 'GraphObject'),
+    'DiGraph': ('VascGraph.GeomGraph.DiGraph', 'DiGraph'),
+    'GenerateDiGraph': ('VascGraph.GeomGraph.GenerateDiGraph', 'GenerateDiGraph'),
+    'AnnotateDiGraph': ('VascGraph.GeomGraph.AnnotateDiGraph', 'AnnotateDiGraph'),
+}
+
+__all__ = list(_EXPORTS.keys())
+
+
+def __getattr__(name):
+
+    if name in _EXPORTS:
+        module_name, attr_name = _EXPORTS[name]
+        attr = getattr(importlib.import_module(module_name), attr_name)
+        globals()[name] = attr
+        return attr
+
+    raise AttributeError(name)

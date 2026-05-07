@@ -8,8 +8,9 @@ Created on Sun Apr  5 23:36:33 2020
 
 from VascGraph.Skeletonize import Skeleton
 from VascGraph.GraphIO import ReadNifti, ReadStackMat, WriteGraphml
-from VascGraph.GraphLab import StackPlot
-from VascGraph.Tools.VisTools import visG
+from VascGraph.Tools.CalcTools import post_node_cleaning
+# from VascGraph.GraphLab import StackPlot
+# from VascGraph.Tools.VisTools import visG
 
 if __name__=='__main__':
     
@@ -18,7 +19,7 @@ if __name__=='__main__':
     '''    
     # s=ReadStackMat('synth1.mat').GetOutput()
     # NIfTI input can be used instead:
-    s=ReadNifti('synth1.nii').GetOutput()
+    s=ReadNifti('../SkelHub/test_data/lsys_data/iter_4_8_step_1/Lnet_i4_0_tort.nii.gz').GetOutput()
 
     #contraction
     speed_param=0.05 # (gamma)
@@ -51,15 +52,15 @@ if __name__=='__main__':
     sk.Update()
     
     fullgraph=sk.GetOutput()
+    fullgraph=post_node_cleaning(fullgraph)
 
     # Save the output graph in SkelHub graphviz-compatible GraphML format.
-    WriteGraphml(path='./test_outputs/', name='mygraph.graphml', graph=fullgraph)
+    WriteGraphml(path='./test_outputs/', name='Lnet_i4_0_tort_clean.graphml', graph=fullgraph)
 
-    print('--Visualize final skeleton ...')
-    splot = StackPlot(new_engine=True)    
-    splot.Update((s>0).astype(int))
-    visG(fullgraph)
-
+    # print('--Visualize final skeleton ...')
+    # splot = StackPlot(new_engine=True)    
+    # splot.Update((s>0).astype(int))
+    # visG(fullgraph)
 
 
 

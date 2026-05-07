@@ -331,6 +331,34 @@ def reduceG(G, j_only=False):
     return G
 
 
+def post_node_cleaning(G):
+    """
+    Remove degree-2 nodes from a graph while preserving graph continuity.
+
+    Input:
+        "G": graph after RefineGraph() and fixG()
+
+    Output:
+        "G_clean": cleaned copy of the input graph
+    """
+    G_clean=G.copy()
+
+    cont=1
+    while cont!=0:
+        cont=0
+        for i in G_clean.GetNodes():
+            nbrs=G_clean.GetNeighbors(i)
+            if len(nbrs)==2:
+                G_clean.remove_node(i)
+                if nbrs[0]!=nbrs[1]:
+                    G_clean.add_edge(nbrs[0], nbrs[1])
+                cont=1
+                break
+
+    G_clean=fixG(G_clean)
+    return G_clean
+
+
 def findNodes(G, j_only=False):
     
     nodes=[]
@@ -791,4 +819,3 @@ def DistMap3D(Label):
     DistMap=np.maximum(DistMap_, DistZY)
 
     return DistMap
-

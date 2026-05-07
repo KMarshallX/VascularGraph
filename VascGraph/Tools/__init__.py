@@ -1,11 +1,20 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb  6 21:47:33 2019
-
-@author: rdamseh
+Lazy tools exports.
 """
 
-from VascGraph.Tools import VisTools
-from VascGraph.Tools import CalcTools
-from VascGraph.Tools import ExtraTools
+import importlib
+
+
+__all__ = ['VisTools', 'CalcTools', 'ExtraTools']
+
+
+def __getattr__(name):
+
+    if name in __all__:
+        module = importlib.import_module('VascGraph.Tools.' + name)
+        globals()[name] = module
+        return module
+
+    raise AttributeError(name)

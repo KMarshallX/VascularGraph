@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="name" attr.type="string" for="node" id="d5" />
+  <key attr.name="r" attr.type="double" for="node" id="d4" />
+  <key attr.name="pos" attr.type="string" for="node" id="d3" />
+  <key attr.name="Z" attr.type="double" for="node" id="d2" />
+  <key attr.name="Y" attr.type="double" for="node" id="d1" />
+  <key attr.name="X" attr.type="double" for="node" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="0">
+      <data key="d0">174.51947414457015</data>
+      <data key="d1">151.32600221587143</data>
+      <data key="d2">92.8363461813583</data>
+      <data key="d3">[174.51947414457015,151.32600221587143,92.8363461813583]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">0</data>
+    </node>
+    <node id="1">
+      <data key="d0">10.2183204669429</data>
+      <data key="d1">293.79268900423085</data>
+      <data key="d2">7.701381151118347</data>
+      <data key="d3">[10.2183204669429,293.79268900423085,7.701381151118347]</data>
+      <data key="d4">6.082762530298219</data>
+      <data key="d5">1</data>
+    </node>
+    <node id="2">
+      <data key="d0">173.76171129426947</data>
+      <data key="d1">150.64712608677178</data>
+      <data key="d2">92.4413025801165</data>
+      <data key="d3">[173.76171129426947,150.64712608677178,92.4413025801165]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">2</data>
+    </node>
+    <node id="3">
+      <data key="d0">258.3019365286699</data>
+      <data key="d1">30.333444310906593</data>
+      <data key="d2">132.4768590400985</data>
+      <data key="d3">[258.3019365286699,30.333444310906593,132.4768590400985]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">3</data>
+    </node>
+    <node id="4">
+      <data key="d0">238.9389619980039</data>
+      <data key="d1">58.3255193368219</data>
+      <data key="d2">124.41176562975987</data>
+      <data key="d3">[238.9389619980039,58.3255193368219,124.41176562975987]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">4</data>
+    </node>
+    <node id="5">
+      <data key="d0">239.4049799698576</data>
+      <data key="d1">57.782913474914</data>
+      <data key="d2">124.6380766768502</data>
+      <data key="d3">[239.4049799698576,57.782913474914,124.6380766768502]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">5</data>
+    </node>
+    <node id="6">
+      <data key="d0">267.32525676396244</data>
+      <data key="d1">260.191096767235</data>
+      <data key="d2">133.5655552454579</data>
+      <data key="d3">[267.32525676396244,260.191096767235,133.5655552454579]</data>
+      <data key="d4">5.0990195135927845</data>
+      <data key="d5">6</data>
+    </node>
+    <node id="7">
+      <data key="d0">137.72287215952986</data>
+      <data key="d1">118.12673720524496</data>
+      <data key="d2">70.77487724233556</data>
+      <data key="d3">[137.72287215952986,118.12673720524496,70.77487724233556]</data>
+      <data key="d4">6.082762530298219</data>
+      <data key="d5">7</data>
+    </node>
+    <edge source="0" target="2" />
+    <edge source="1" target="7" />
+    <edge source="2" target="7" />
+    <edge source="2" target="6" />
+    <edge source="3" target="4" />
+    <edge source="4" target="5" />
+    <edge source="4" target="7" />
+  </graph>
+</graphml>

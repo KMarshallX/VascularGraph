@@ -1,16 +1,20 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb  6 12:53:15 2019
-
-@author: rdamseh
+Top-level package exports for VascGraph.
 """
 
+import importlib
 
-from VascGraph import GraphLab
-from VascGraph import Skeletonize
-from VascGraph import GraphIO
-from VascGraph import GeomGraph
-from VascGraph import GraphValidation
-from VascGraph import Tools
 
+__all__ = ['Skeletonize', 'GraphIO', 'GeomGraph', 'GraphValidation', 'Tools', 'GraphLab']
+
+
+def __getattr__(name):
+
+    if name in __all__:
+        module = importlib.import_module('VascGraph.' + name)
+        globals()[name] = module
+        return module
+
+    raise AttributeError(name)

@@ -1,11 +1,27 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Tue May 21 09:44:03 2019
-
-@author: rdamseh
+Lazy graph validation exports.
 """
 
-from VascGraph.GraphValidation.ValidateDiadem import ValidateDiadem
-from VascGraph.GraphValidation.ValidateNetMets import ValidateNetMets
-from VascGraph.GraphValidation.ValidateRadius import ValidateRadius
+import importlib
+
+
+_EXPORTS = {
+    'ValidateDiadem': ('VascGraph.GraphValidation.ValidateDiadem', 'ValidateDiadem'),
+    'ValidateNetMets': ('VascGraph.GraphValidation.ValidateNetMets', 'ValidateNetMets'),
+    'ValidateRadius': ('VascGraph.GraphValidation.ValidateRadius', 'ValidateRadius'),
+}
+
+__all__ = list(_EXPORTS.keys())
+
+
+def __getattr__(name):
+
+    if name in _EXPORTS:
+        module_name, attr_name = _EXPORTS[name]
+        attr = getattr(importlib.import_module(module_name), attr_name)
+        globals()[name] = attr
+        return attr
+
+    raise AttributeError(name)
