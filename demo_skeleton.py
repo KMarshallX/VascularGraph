@@ -19,20 +19,20 @@ if __name__=='__main__':
     s=ReadStackMat('synth1.mat').GetOutput()
 
     #contraction
-    speed_param=0.05
-    dist_param=0.5
-    med_param=0.5
-    degree_threshold=5.0 # used to check if a node is a skeletal node
-    sampling=1
-    clustering_r=1
+    speed_param=0.05 # (gamma)
+    dist_param=0.5 # (alpha)
+    med_param=0.5 # (beta)
+    degree_threshold=5.0 # used to check if a node is a skeletal node (formula 9)
+    sampling=1 # ?
+    clustering_r=1 # ?
 
     #contraction
-    stop_param=0.001 # controls the convergence criterion
+    stop_param=0.001 # controls the convergence criterion (sigma_a)
     n_free_iteration=0 #number of iteration without checking for convergence
     
     #refinement
-    area_param=50.0 # area of polygens to be decimated 
-    poly_param=10 # number of nodes forming a polygon    
+    area_param=50.0 # area of polygens to be decimated (formula 10)
+    poly_param=10 # number of nodes forming a polygon (sigma_n)
     
     sk=Skeleton(label=s, 
                 speed_param=speed_param,
