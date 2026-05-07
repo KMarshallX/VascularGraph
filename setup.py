@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-install_requirements = ['Click>=7.0']
+install_requirements = ['Click>=7.0', 'nibabel']
 setup_requirements = []
 test_requirements = []
 
