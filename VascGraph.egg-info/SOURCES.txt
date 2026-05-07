@@ -36,11 +36,13 @@ VascGraph/GraphIO/ReadCenterlineCSV.py
 VascGraph/GraphIO/ReadGraphFromXLSX.py
 VascGraph/GraphIO/ReadMRIGraph.py
 VascGraph/GraphIO/ReadNWKCS31.py
+VascGraph/GraphIO/ReadNifti.py
 VascGraph/GraphIO/ReadPajek.py
 VascGraph/GraphIO/ReadSOAX.py
 VascGraph/GraphIO/ReadSWC.py
 VascGraph/GraphIO/ReadStackMat.py
 VascGraph/GraphIO/ReadVTrails.py
+VascGraph/GraphIO/WriteGraphml.py
 VascGraph/GraphIO/WritePajek.py
 VascGraph/GraphIO/WriteSWC.py
 VascGraph/GraphIO/WriteSWC2.py

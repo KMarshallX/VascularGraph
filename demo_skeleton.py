@@ -16,9 +16,9 @@ if __name__=='__main__':
     '''
     This demo explains how to graph using Skeleton module	
     '''    
-    s=ReadStackMat('synth1.mat').GetOutput()
+    # s=ReadStackMat('synth1.mat').GetOutput()
     # NIfTI input can be used instead:
-    # s=ReadNifti('synth1.nii').GetOutput()
+    s=ReadNifti('synth1.nii').GetOutput()
 
     #contraction
     speed_param=0.05 # (gamma)
@@ -53,7 +53,7 @@ if __name__=='__main__':
     fullgraph=sk.GetOutput()
 
     # Save the output graph in SkelHub graphviz-compatible GraphML format.
-    # WriteGraphml(path='', name='mygraph.graphml', graph=fullgraph)
+    WriteGraphml(path='./test_outputs/', name='mygraph.graphml', graph=fullgraph)
 
     print('--Visualize final skeleton ...')
     splot = StackPlot(new_engine=True)    

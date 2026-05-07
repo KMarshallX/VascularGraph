@@ -8,11 +8,13 @@ Created on Wed Feb  6 21:48:11 2019
 
 from VascGraph.GraphIO.ReadMRIGraph import ReadMRIGraph
 from VascGraph.GraphIO.ReadStackMat import ReadStackMat
+from VascGraph.GraphIO.ReadNifti import ReadNifti
 from VascGraph.GraphIO.ReadPajek import ReadPajek
 from VascGraph.GraphIO.ReadCenterlineCSV import ReadCenterlineCSV 
 from VascGraph.GraphIO.ReadSWC import ReadSWC
 from VascGraph.GraphIO.WriteSWC import WriteSWC
 from VascGraph.GraphIO.WritePajek import WritePajek
+from VascGraph.GraphIO.WriteGraphml import WriteGraphml
 from VascGraph.GraphIO.ReadCGAL import ReadCGAL
 from VascGraph.GraphIO.ReadGraphFromXLSX import ReadGraphFromXLSX
 from VascGraph.GraphIO.ReadSOAX import ReadSOAX
