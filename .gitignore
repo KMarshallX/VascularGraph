@@ -1,1 +1,12 @@
 VascGraph.egg-info/*
+
+# Python cache artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Tool/test cache artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
